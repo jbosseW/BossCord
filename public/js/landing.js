@@ -454,19 +454,7 @@ function LandingPage() {
         }, ctx.errorMessage) : null,
         React.createElement('p', {
           style: { textAlign: 'center', color: '#949ba4', fontSize: '12px', marginTop: '24px', fontStyle: 'italic' }
-        }, 'Everything here is ephemeral. When you leave, it\'s gone.'),
-        React.createElement('a', {
-          href: 'https://patreon.com/AstraMidWestMysteryMeat?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink',
-          target: '_blank', rel: 'noopener noreferrer',
-          style: {
-            display: 'inline-block', marginTop: '16px', padding: '8px 20px',
-            background: '#f96854', border: 'none', borderRadius: '6px',
-            color: '#fff', fontSize: '13px', fontWeight: 600,
-            textDecoration: 'none', fontFamily: 'inherit', transition: 'background 0.15s'
-          },
-          onMouseEnter: function(e) { e.currentTarget.style.background = '#e5533d'; },
-          onMouseLeave: function(e) { e.currentTarget.style.background = '#f96854'; }
-        }, 'Support on Patreon')
+        }, 'Everything here is ephemeral. When you leave, it\'s gone.')
       )
     );
   }
@@ -1243,19 +1231,7 @@ function LandingPage() {
       ),
       React.createElement('p', {
         style: { color: '#949ba4', fontSize: '12px', fontStyle: 'italic', marginTop: '12px', display: isMobile ? 'none' : 'block' }
-      }, 'Everything here is ephemeral. When you leave, it\'s gone.'),
-      !isMobile ? React.createElement('a', {
-        href: 'https://patreon.com/AstraMidWestMysteryMeat?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink',
-        target: '_blank', rel: 'noopener noreferrer',
-        style: {
-          display: 'inline-block', marginTop: '10px', padding: '6px 16px',
-          background: '#f96854', borderRadius: '6px',
-          color: '#fff', fontSize: '12px', fontWeight: 600,
-          textDecoration: 'none', fontFamily: 'inherit', transition: 'background 0.15s'
-        },
-        onMouseEnter: function(e) { e.currentTarget.style.background = '#e5533d'; },
-        onMouseLeave: function(e) { e.currentTarget.style.background = '#f96854'; }
-      }, 'Support on Patreon') : null
+      }, 'Everything here is ephemeral. When you leave, it\'s gone.')
     ),
     isMobile ? React.createElement(BottomTabBar, { activeTab: topTab, onTabChange: setTopTab }) : null
   );
