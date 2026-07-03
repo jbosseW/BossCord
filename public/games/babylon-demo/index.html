@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obstacle Runner 3D - BossCord</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0a1a; }
+  #renderCanvas { width: 100%; height: 100%; touch-action: none; outline: none; }
+  #hud {
+    position: absolute; top: 0; left: 0; right: 0; height: 44px;
+    background: rgba(0,0,0,0.6); display: flex; align-items: center;
+    justify-content: space-between; padding: 0 20px; z-index: 10;
+    font-family: Inter, sans-serif; pointer-events: none;
+  }
+  #hud span { font-size: 16px; font-weight: 700; }
+  #hud .score { color: #f0b232; }
+  #hud .speed { color: #57f287; }
+  #hud .chips { color: #ffffff; }
+  #overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: rgba(10,10,26,0.85); z-index: 20;
+    font-family: Inter, sans-serif; text-align: center;
+  }
+  #overlay.hidden { display: none; }
+  #overlay h1 { color: #f0b232; font-size: 32px; margin-bottom: 12px; }
+  #overlay p { color: #949ba4; font-size: 16px; margin-bottom: 8px; }
+  #overlay .final-score { color: #57f287; font-size: 24px; font-weight: 700; margin: 12px 0; }
+  #overlay .hint { color: #949ba4; font-size: 14px; margin-top: 16px; animation: blink 1.5s infinite; }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+</style>
+</head>
+<body>
+<canvas id="renderCanvas"></canvas>
+<div id="hud">
+  <span class="score" id="scoreDisplay">Score: 0</span>
+  <span class="speed" id="speedDisplay">Speed: 1.0x</span>
+  <span class="chips" id="chipsDisplay">Chips: +0</span>
+</div>
+<div id="overlay">
+  <h1>Obstacle Runner 3D</h1>
+  <p>Dodge obstacles as you roll forward!</p>
+  <p>Use A/D or Left/Right arrow keys to move</p>
+  <p class="hint">Press SPACE to start</p>
+</div>
+<script src="/games/bridge.js"></script>
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

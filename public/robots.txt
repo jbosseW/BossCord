@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /socket.io/
+Disallow: /videos/
+
+Sitemap: https://bosscord.com/sitemap.xml

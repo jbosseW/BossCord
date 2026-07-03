@@ -1,0 +1,26 @@
+node_modules/
+data/
+*.bak
+NUL
+
+# --- Licensed art/audio: stripped from the repo (owner-licensed packs) ---
+# See ASSETS_PLACEHOLDER.md in asset folders. Files live only on the dev machine.
+*.ogg
+*.wav
+*.mp3
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Internal ops / deployment (kept out of the public repo)
+deploy-kvm/
+deploy.sh
+ecosystem.config.js
+CONTEXT.md
+CAPACITY_ANALYSIS.md
+SECURITY-RESPONSE-REPORT.md
+*.pem
+*.key
+*.crt

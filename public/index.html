@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title>BossCord - Anonymous Chat, Games & Trading Cards</title>
+<meta name="description" content="BossCord is an anonymous chat platform with built-in games, trading card battles, stock market simulation, loot boxes, and more. No registration required." />
+<meta name="keywords" content="anonymous chat, online games, trading card game, stock market simulator, loot boxes, browser game, no registration" />
+<meta name="author" content="BossCord" />
+<meta name="theme-color" content="#f0b232" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/bosscord/favicon.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/bosscord/icon-16.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/icons/bosscord/icon-48.png" />
+<link rel="apple-touch-icon" sizes="192x192" href="/icons/bosscord/icon-192.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://bosscord.com/" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BossCord - Anonymous Chat, Games & Trading Cards" />
+<meta property="og:description" content="Anonymous chat with built-in TCG battles, stock market, loot boxes, and mini-games. No account required." />
+<meta property="og:url" content="https://bosscord.com/" />
+<meta property="og:site_name" content="BossCord" />
+<meta property="og:image" content="https://bosscord.com/icons/bosscord/icon-192.png" />
+<meta property="og:image:width" content="192" />
+<meta property="og:image:height" content="192" />
+<!-- Social Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BossCord - Anonymous Chat, Games & Trading Cards" />
+<meta name="twitter:description" content="Anonymous chat with built-in TCG battles, stock market, loot boxes, and mini-games. No account required." />
+<meta name="twitter:image" content="https://bosscord.com/icons/bosscord/icon-192.png" />
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BossCord",
+  "url": "https://bosscord.com",
+  "description": "Anonymous chat platform with built-in games, trading card battles, stock market simulation, and loot boxes. No registration required.",
+  "applicationCategory": "SocialNetworkingApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="root"></div>
+
+<!-- Security measures (no inline scripts) -->
+<script src="/js/security-init.js?v=2.6.0"></script>
+
+<!-- Vendor libraries (SRI verified) -->
+<script crossorigin="anonymous" src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" integrity="sha384-tMH8h3BGESGckSAVGZ82T9n90ztNXxvdwvdM6UoR56cYcf+0iGXBliJ29D+wZ/x8"></script>
+<script crossorigin="anonymous" src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" integrity="sha384-bm7MnzvK++ykSwVJ2tynSE5TRdN+xL418osEVF2DE/L/gfWHj91J2Sphe582B1Bh"></script>
+<script crossorigin="anonymous" src="https://cdn.socket.io/4.7.2/socket.io.min.js" integrity="sha384-mZLF4UVrpi/QTWPA7BjNPEnkIfRFn4ZEO3Qt/HFklTJBj/gBOV8G3HcKn4NfQblz"></script>
+
+<!-- Shared effects utilities (loaded before game modules) -->
+<script src="/js/sound-manager.js?v=2.6.0"></script>
+<script src="/js/particles.js?v=2.6.0"></script>
+<script src="/js/effects.js?v=2.6.0"></script>
+
+<!-- Application modules (sequential, no Babel needed — all use React.createElement) -->
+<script src="/js/core.js?v=2.6.0"></script>
+<script src="/js/notifications.js?v=2.6.0"></script>
+<script src="/js/ui-common.js?v=2.6.0"></script>
+<script src="/js/cords.js?v=2.6.0"></script>
+<script src="/js/leaderboard.js?v=2.6.0"></script>
+<script src="/js/friends.js?v=2.6.0"></script>
+<script src="/js/crypto.js?v=2.6.0"></script>
+<script src="/js/dms.js?v=2.6.0"></script>
+<script src="/js/profile.js?v=2.6.0"></script>
+<!-- Game scripts are lazy-loaded on demand by script-loader.js -->
+<!-- Removed from eager loading: games-orbs, games-casino, games-cards, games-tcg, -->
+<!-- games-economy, game-launcher, games-liero, games-horseracing, games-chess, games-pool -->
+<script src="/js/script-loader.js?v=2.6.0"></script>
+<script src="/js/games-hub.js?v=2.6.0"></script>
+<script src="/js/about.js?v=2.6.0"></script>
+<script src="/js/report.js?v=2.6.0"></script>
+<script src="/js/bugreport.js?v=2.6.0"></script>
+<script src="/js/featurerequest.js?v=2.6.0"></script>
+<script src="/js/landing.js?v=2.6.0"></script>
+<script src="/js/video-roulette.js?v=2.6.0"></script>
+<script src="/js/chat.js?v=2.6.0"></script>
+<script src="/js/app.js?v=2.6.0"></script>
+
+</body>
+</html>

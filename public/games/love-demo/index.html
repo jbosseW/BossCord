@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paddle Ball (LOVE2D) - BossCord</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0a1a; }
+  .container {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: center; padding: 32px;
+  }
+  .badge {
+    display: inline-block; padding: 6px 16px;
+    background: #e74c3c; color: #fff; border-radius: 20px;
+    font-size: 13px; font-weight: 700; margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+  h1 { color: #dcddde; font-size: 28px; margin-bottom: 12px; }
+  h1 span { color: #f0b232; }
+  .desc { color: #949ba4; font-size: 15px; line-height: 1.6; max-width: 500px; margin-bottom: 24px; }
+  .tech-info {
+    background: #252528; border: 1px solid #4e5058; border-radius: 12px;
+    padding: 20px 28px; max-width: 500px; width: 100%; text-align: left;
+  }
+  .tech-info h3 { color: #dcddde; font-size: 16px; margin-bottom: 10px; }
+  .tech-info p { color: #949ba4; font-size: 13px; line-height: 1.6; margin-bottom: 8px; }
+  .tech-info a { color: #f0b232; text-decoration: none; }
+  .tech-info a:hover { text-decoration: underline; }
+  .tech-info code {
+    background: #18181b; padding: 2px 6px; border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace; font-size: 12px; color: #57f287;
+  }
+  .coming-soon {
+    margin-top: 24px; padding: 12px 32px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: none; border-radius: 8px;
+    color: #fff; font-size: 16px; font-weight: 700;
+    font-family: inherit; cursor: default;
+    box-shadow: 0 4px 16px rgba(231,76,60,0.3);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="badge">LOVE2D Engine</div>
+  <h1><span>Paddle Ball</span> - Coming Soon</h1>
+  <p class="desc">
+    This game will be built with LOVE2D (Lua) and compiled to run in the browser
+    using love.js. The source files (conf.lua and main.lua) are included in this
+    directory as reference.
+  </p>
+  <div class="tech-info">
+    <h3>How LOVE2D games run in the browser</h3>
+    <p>
+      LOVE2D games are written in Lua and use the LOVE framework for 2D rendering,
+      audio, and input. To run in a browser, they are compiled to JavaScript/WebAssembly
+      using <a href="https://github.com/Davidobot/love.js" target="_blank" rel="noopener">love.js</a>,
+      an Emscripten-based port of LOVE.
+    </p>
+    <p>
+      The build process takes <code>.lua</code> source files, packages them into a
+      <code>.love</code> archive, and compiles the LOVE engine + game into a
+      <code>.js</code> + <code>.wasm</code> bundle that runs in an HTML5 canvas.
+    </p>
+    <p>
+      Once compiled, the game communicates with BossCord via the same
+      <code>bridge.js</code> postMessage API used by Phaser and Babylon.js games.
+      The Lua side calls JavaScript bridge functions through love.js's JS interop.
+    </p>
+  </div>
+  <div class="coming-soon">Coming Soon</div>
+</div>
+<script src="/games/bridge.js"></script>
+<script>
+  // Notify parent that this page has loaded (even though the game is not playable yet)
+  if (window.BossCordBridge) {
+    window.BossCordBridge.notifyLoaded();
+  }
+</script>
+</body>
+</html>

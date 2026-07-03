@@ -1,0 +1,24 @@
+{
+  "name": "bosscord",
+  "version": "2.0.0",
+  "description": "BossCord - Anonymous ephemeral chat with public rooms and private servers",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-react": "^7.28.5",
+    "acorn": "^8.15.0"
+  }
+}
