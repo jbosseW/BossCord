@@ -1,15 +1,14 @@
 # BossCord
 
-> **⚠️ Warning — read before hosting.** This is an **anonymous chat platform**.
-> Public instances of anonymous chat attract spam, harassment, and illegal
-> content quickly. If you deploy one, **you are the operator**: moderation and
-> legal compliance are entirely your responsibility (see
-> [Legal & responsible use](#legal--responsible-use) and
-> [Moderation & anti-abuse](#moderation--anti-abuse)). Start private —
-> LAN or invite-only with `MODERATOR_KEYS` configured — before even
-> considering a public instance. Use at your own risk.
-
 **An anonymous, ephemeral Discord-style chat platform with a built-in mini-game arcade and chip economy — Node.js/Socket.IO backend, buildless React frontend.**
+
+> **⚠️ Important: BossCord is anonymous and ephemeral by design. Public
+> instances can attract abuse. As the operator you are fully responsible for
+> moderation and legal compliance. Strongly recommended for private use or
+> well-moderated communities only — start LAN or invite-only with
+> `MODERATOR_KEYS` configured. Use at your own risk.**
+> See [Legal & responsible use](#legal--responsible-use) and
+> [Moderation & anti-abuse](#moderation--anti-abuse).
 
 ## What it does
 
@@ -41,9 +40,10 @@ The React client is served statically from `public/` and uses `React.createEleme
 
 ![Terms of Service gate — every visitor must accept the 18+ ToS before the app loads](docs/screenshots/tos-gate.png)
 
-_The ToS gate above is the first thing every visitor sees. More captures (a
-public room, the games hub, a chess match) require an interactive session —
-TODO._
+![Login — anonymous entry: pick a display name (or none), optional saved account key + PIN](docs/screenshots/login.png)
+
+_The ToS gate is the first thing every visitor sees; login is anonymous by
+design. In-app captures (a public room, the games hub, a chess match) — TODO._
 
 ## Moderation & anti-abuse
 
@@ -68,6 +68,15 @@ before hosting anything non-private:
 What does *not* ship: report-to-operator flows, persistent audit logs (by
 design), CAPTCHA, and email/identity verification. If your instance is public,
 those gaps are yours to close.
+
+## Contributing & issue policy
+
+Contributions are welcome under the [Code of Conduct](CODE_OF_CONDUCT.md).
+One boundary stated up front: **issues or pull requests requesting
+"uncensored" modes, removal of the filter/moderation tooling, evasion of the
+ToS gate, or other high-risk features will be closed without debate.** The
+project's safety posture (ToS gate, filter, rate limits, moderator tools) is
+part of its identity, not an optional layer.
 
 ## Known issues / roadmap
 
