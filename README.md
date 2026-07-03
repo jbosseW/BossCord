@@ -1,5 +1,14 @@
 # BossCord
 
+> **⚠️ Warning — read before hosting.** This is an **anonymous chat platform**.
+> Public instances of anonymous chat attract spam, harassment, and illegal
+> content quickly. If you deploy one, **you are the operator**: moderation and
+> legal compliance are entirely your responsibility (see
+> [Legal & responsible use](#legal--responsible-use) and
+> [Moderation & anti-abuse](#moderation--anti-abuse)). Start private —
+> LAN or invite-only with `MODERATOR_KEYS` configured — before even
+> considering a public instance. Use at your own risk.
+
 **An anonymous, ephemeral Discord-style chat platform with a built-in mini-game arcade and chip economy — Node.js/Socket.IO backend, buildless React frontend.**
 
 ## What it does
@@ -30,7 +39,35 @@ The React client is served statically from `public/` and uses `React.createEleme
 
 ## Screenshots
 
-_TODO — add captures (a public room, the games hub, a chess match)._
+![Terms of Service gate — every visitor must accept the 18+ ToS before the app loads](docs/screenshots/tos-gate.png)
+
+_The ToS gate above is the first thing every visitor sees. More captures (a
+public room, the games hub, a chess match) require an interactive session —
+TODO._
+
+## Moderation & anti-abuse
+
+These are the concrete mechanisms that ship in the codebase — configure them
+before hosting anything non-private:
+
+- **ToS gate + 18+ eligibility** — the client blocks entry until the Terms of
+  Service (age requirement, user responsibility) are accepted.
+- **Proof-of-work walls** (`pow.js`) — SHA-256 puzzles on connect (~18 bits,
+  1-2s) and account creation (~20 bits, 2-5s). Raises the cost of bot floods
+  and throwaway-identity spam.
+- **IP rate limiting** (`ratelimit.js`) — per-IP event limits with exponential
+  backoff on violations, a global connection cap (5,000), and memory-only IP
+  storage auto-purged after 6h (consistent with the no-traces design).
+- **Slur/hate-speech filter** (`filter.js`) — extensive list-based filter,
+  opt-in per account.
+- **Moderator tools** (`handlers/moderation.js`) — message deletion and user
+  kick, gated by the `MODERATOR_KEYS` environment variable. **Set this before
+  any shared deployment** — an instance nobody can moderate is not defensible.
+- **Daily wipe** — all rooms/messages erased at midnight UTC.
+
+What does *not* ship: report-to-operator flows, persistent audit logs (by
+design), CAPTCHA, and email/identity verification. If your instance is public,
+those gaps are yours to close.
 
 ## Known issues / roadmap
 

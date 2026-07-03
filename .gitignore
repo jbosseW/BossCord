@@ -24,3 +24,6 @@ SECURITY-RESPONSE-REPORT.md
 *.pem
 *.key
 *.crt
+
+# own screenshots are allowed (not licensed pack art)
+!docs/screenshots/*.png
