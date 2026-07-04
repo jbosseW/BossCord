@@ -111,7 +111,7 @@ Developed with AI assistance — **Anthropic Claude** (Claude Code) for implemen
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Proprietary — see [LICENSE](LICENSE). Licensed under the **Ephemeral / Proprietary License** (All Rights Reserved with a Sharing Exception).
 
 ## Art & audio licensing
 
